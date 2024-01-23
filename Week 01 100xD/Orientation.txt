@@ -1,0 +1,12 @@
+The goal of this cohort:
+    - Getting great at Full Stack Web Development
+    - Learning how things are done in good companies or startups
+    - Learning all the right practices for writing and deploying code
+    - Checkpointing knowledge with open source codebases
+    - Building projects of our own
+    - Trying my best to aim for GSOC and jobs/internships in startups
+
+My category is Mid. I have done DSA and done a little bit of MERN. The goal is to break out of beginner's hell (the lot that feels they know how to code but can't ever find high-paying jobs). The idea is to code everyday for an hour.
+
+Hard TODOs are a bare minimum.
+
