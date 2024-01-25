@@ -1,0 +1,34 @@
+<!-- We know how to create a simple HTML page that has 2 inputs
+and a button to calculate the sum -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <input type="text" placeholder="First number" class="input" id ="num1">
+    <input type="text" placeholder="Second number" class="input" id="num2">
+    <button onclick="populateDiv()">Calculate Sum</button>
+    <div id="final-sum"></div>
+</body>
+</html>
+<!-- However, we now want to add some functionality to the
+page. We want to display the sum of the 2 numbers below.
+We need the DOM (Document Object Model) for creating this
+dynamic frontend. -->
+<!-- We add an empty div element with id 'final-sum'. We create
+a function populateDiv() in script.js and give it as the onclick
+function to the button. -->
+<!-- We use .getElementById and .InnerHTML to get elements,
+their inner value and set the sum as the value of 'final-sum' -->
+<!-- This was the method of creating dynamic websites decades ago.
+Now, however we use React, which makes it very easy. -->
+
+<!-- Now, we want to do the same thing, but via a request to
+the backend. Essentially, we cannot do the addition locally
+but send it to a backend and get back the response. -->
