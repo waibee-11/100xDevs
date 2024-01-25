@@ -52,4 +52,6 @@ const value = {
 }
 
 const token = jwt.sign(value, "secret");
-console.log(token);
+
+// - The secret is very important. The backend needs to store
+//   the secret key securely.
