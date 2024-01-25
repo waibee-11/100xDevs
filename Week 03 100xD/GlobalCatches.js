@@ -1,5 +1,5 @@
 // GLOBAL CATCHES:
-// - It is a type of middleware in JS.
+// - It is a type of middleware that handles error.
 // - It is defined at the very end, after all the routes.
 // - Whenever a server goes down, instead of exposing the
 // error, we can use global catches to provide a clean
