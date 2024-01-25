@@ -11,9 +11,8 @@ and a button to calculate the sum -->
     <script src="script.js"></script>
 </head>
 <body>
-    <input type="text" placeholder="First number" class="input" id ="num1">
-    <input type="text" placeholder="Second number" class="input" id="num2">
-    <button onclick="populateDiv()">Calculate Sum</button>
+    <input type="text" placeholder="First number" class="input" id ="num1" oninput="debouncePopulateDiv()">
+    <input type="text" placeholder="Second number" class="input" id="num2" oninput="debouncePopulateDiv()">
     <div id="final-sum"></div>
 </body>
 </html>
@@ -32,3 +31,9 @@ Now, however we use React, which makes it very easy. -->
 <!-- Now, we want to do the same thing, but via a request to
 the backend. Essentially, we cannot do the addition locally
 but send it to a backend and get back the response. -->
+
+<!-- DEBOUNCING / THROTTLING -->
+<!-- Sometimes, the backend sends too many requests than what is
+actually required. You want the backend to send requests only when
+the user has not typed anything for, let's say 100ms. We use
+DEBOUNCING for this. -->
