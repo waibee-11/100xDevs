@@ -1,0 +1,11 @@
+// DOM MANIPULATION:
+// - It is the process of updating/adding HTML without refreshing
+//   the page.
+// - DOM Manipulation is very hard to write as a developer.
+
+// STEPS TO CREATE A REACT APP:
+// - Go to the terminal and cd to the
+// folder you want to create your app in.
+// - Use the command 
+// "npm create vite@latest"
+// - Follow the instructions
