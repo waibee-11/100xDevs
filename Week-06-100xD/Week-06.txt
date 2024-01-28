@@ -1,0 +1,59 @@
+LECTURE 1:
+
+REACT RETURNS:
+Every React component must return only 1 element. This is ensure easier reconcilation. If you want to return
+multiple elements, encapsulate them inside a single parent element.
+
+------------------------------------------------------------------
+
+RE-RENDERING:
+React creates dynamic websites. Anytime such dynamic features happen, a re-render happens. The rule of thumb is to
+minimize the number of re-renders. You don't want to re-render static part of the page.
+
+A re-render means that:
+- React has done some work of calculate what all should update in a componenent
+- The component actually got called
+
+A re-render happens when:
+- A state variable that is being used inside a component changes
+- A parent component re-render triggers a re-render for all the children
+
+Ways to minimize re-renders:
+- Define state variables only inside components that use them
+- Passing the component to React.memo allows you to skip re-renders if the props do not change
+
+------------------------------------------------------------------
+
+KEYS IN REACT:
+- In every React component array, it is important to define a key or id property that allows React to understand that
+every component is seperate and to make out what has changed.
+- This basically allows React to minimize re-renders by better reconcilation.
+
+
+------------------------------------------------------------------
+
+WRAPPER COMPONENTS:
+- These are componenents that take other componenents as input. It is a way to have a template for a type of
+components, even if each one has different content.
+- Make a wrapper component and then add a component inside it. The inside content can be accessed by 'props.children'
+
+------------------------------------------------------------------
+
+USEEFFECT:
+- Allows you to hook into lifecycle feature.
+- It runs only once when the component mounts for the first time.
+- It is similar to componentOnMount()
+
+------------------------------------------------------------------
+
+USEMEMO:
+
+------------------------------------------------------------------
+
+USECALLBACK:
+
+------------------------------------------------------------------
+
+USEREF:
+
+------------------------------------------------------------------
