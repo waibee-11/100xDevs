@@ -1,0 +1,9 @@
+WHY DO YOU NEED REACT?
+- For static websites, you don't need React.
+- For dynamic websites, React makes it easy to do DOM manipulation.
+
+I skimmed through the rest of the lecture because I already know
+the basics of React.
+
+Harkirat discussed topics like state, props, components, re-rendering,
+and created a basic to-do app using these concepts.
