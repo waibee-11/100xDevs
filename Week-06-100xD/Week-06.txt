@@ -29,6 +29,10 @@ KEYS IN REACT:
 every component is seperate and to make out what has changed.
 - This basically allows React to minimize re-renders by better reconcilation.
 
+------------------------------------------------------------------
+
+RECONCILATION:
+- It is the process by which React calculates what has changed and performs necessary operations.
 
 ------------------------------------------------------------------
 
@@ -47,13 +51,26 @@ USEEFFECT:
 ------------------------------------------------------------------
 
 USEMEMO:
+- It also guards a certain code from running unless something in the dependency array changes
+- However, here you can return something from inside the function and use const x = useMemo(...) and use x elsewhere
+- Basically, it is same as useEffect() with a subtle difference
+- We usually use useMemo to memoize a variable that depends on variables that have not changed.
+- USE useMemo() WHEN YOU CREATE A DERIVED STATE TO ENSURE THAT ITS VALUE CHANGES ONLY WHEN THE DEPENDENCY CHANGES
 
 ------------------------------------------------------------------
 
 USECALLBACK:
+- You actually don't need to use useCallback() much. Anything that useCallback() does can be done using useMemo()
+- Technically, it is used to memoize a function.
+- If the function is a prop for a componenet, and we have used memo to miminize re-render for that componenent, it will
+still re-render because the function would re-run even if its dependancies don't change.
+- Here, you can use useCallback() to prevent the function from re-running if its dependancies have not changed.
+- Therefore, we will avoid the extra re-render of the componenent.
 
 ------------------------------------------------------------------
 
 USEREF:
+- This is used to get a reference to DOM elements.
+- Similar to document.getElementById(), but more clean syntax.
 
 ------------------------------------------------------------------

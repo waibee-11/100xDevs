@@ -1,0 +1,35 @@
+
+REACT ROUTER DOM:
+- The first part of the lecture focussed on Routing. We use a library called React Router Dom for this.
+- We can use many tools such as navigate(), lazy loading, etc. to optimize routing.
+
+-------------------------------------------------------------------
+
+PROP-DRILLING:
+- Let's say there is a parent component in which you define a state variable.
+- Now let's say there are 2 children to this component, in which the left child needs this state variable.
+- The right child does not need it, but 4 levels down, there is a component that needs it.
+- Now, we will have to define the state variable in the top-most level since it's left child needs it. However,
+the state variable will be passed 4 levels down on the right side until it reaches the component that needs it.
+- So, there will be 3 or 4 components that will only accept the state and pass it down.
+- This is called prop drilling.
+- The Context API helps us to avoid prop drilling
+
+-------------------------------------------------------------------
+
+REACT CONTEXT API:
+- This is a way to transfer states from one level to a much lower level.
+- However, the context api is now replaced by state-management libraries like recoil, redux, etc.
+
+-------------------------------------------------------------------
+
+RECOIL:
+- This is a state management library that seperates all the components and states into 2 different parts.
+- All the states (called atoms) are defined in a seperate folder (usually called /store/atoms)
+- The state variables are imported into the components that need them. Therefore, only these components are re-rendered
+- Some important functions are:
+    - useRecoilValue()
+    - useRecoilState()
+    - useSetRecoilState()
+- If in a component, you are only setting state, change the setCount(count + 1) to setCount(count => count + 1) and
+use useSetRecoilState() instead of useRecoilState()
