@@ -1,0 +1,21 @@
+IMPORTANT CONCEPTS TO KNOW WHEN SWITCHING FROM ONE CSS FRAMEWORK TO ANOTHER:
+- Flex
+- Grids
+- Responsiveness
+- Standard styling
+
+----------------------------------------------------------------------------
+
+TAILWIND:
+- It is a popular CSS framework that uses classes instead of raw CSS code.
+- For installation process, follow the docs on tailwind's website.
+- For commands, again the docs are the best place.
+
+----------------------------------------------------------------------------
+
+RESPONSIVENESS IN TAILWIND:
+- Tailwind comes with a lot of breakpoints like sm, md, lg, xl, xxl
+- Use these breakpoints before a classname to conditionally render them based on the screen size
+- Tailwind is a mobile first framework. Unprefixed utilities will be applied for all sizes, and prefixed utilities will
+be applied for that size and above.
+- Eg: sm:text-center will center the text for sm and above (and not below as you might think)
