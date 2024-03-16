@@ -1,0 +1,3 @@
+LIFECYCLE EVENTS:
+
+- useEffect is the equivalent of componentDidMount()
