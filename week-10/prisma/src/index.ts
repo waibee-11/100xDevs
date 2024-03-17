@@ -30,6 +30,14 @@ async function updateUser(username: string, params: updateParams){
     console.log(response);
 }
 
+async function deleteUser(username: string){
+    const response = await prisma.user.delete({
+        where: {username}
+    });
+    console.log(response);
+};
+
 // insertUser("vhbarve", "mypassword2", "Ved", "Barve");
 // insertUser("nasa", "assume", "Nats", "Sawant");
 updateUser("nasa", {firstname: "Nathan", lastname: "Sawant"});
+deleteUser("nasa");
