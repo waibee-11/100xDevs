@@ -18,6 +18,8 @@ model User {
   email    String   @unique
   name     String?
   password String
+  image String?
+  profile String?
   posts    Post[]
 }
 
@@ -25,6 +27,7 @@ model Post {
   id        String   @id @default(uuid())
   title     String
   content   String
+  coverImage String?
   published Boolean  @default(false)
   author    User     @relation(fields: [authorId], references: [id])
   authorId  String

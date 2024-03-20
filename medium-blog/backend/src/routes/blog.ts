@@ -4,7 +4,6 @@ import { Hono } from "hono";
 import { sign, verify } from "hono/jwt";
 import { createBlogInput, updateBlogInput } from "@waibee/medium-common-2";
 
-
 export const blogRouter = new Hono<{
     Bindings: {
         DATABASE_URL: string;
@@ -12,10 +11,19 @@ export const blogRouter = new Hono<{
     },
     Variables: {
         userId: string,
+        user: {
+            id: string,
+            email: string,
+            name: string,
+            password: string
+        },
     }
 }>();
 
 blogRouter.use('/*', async (c, next) => {
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate());
     const authHeader: string = c.req.header('Authorization') || "";
     const token = authHeader.split(' ')[1];
     try{
@@ -58,6 +66,7 @@ blogRouter.post('/', async (c) => {
             title: body.title,
             content: body.content,
             authorId: userId,
+            coverImage: body.coverImage || "",
         }
     });
 
@@ -87,11 +96,11 @@ blogRouter.put('/', async (c) => {
     const response = await prisma.post.update({
         where: {
             id: body.id,
-            authorId: userId
         },
         data: {
             title: body.title,
-            content: body.content
+            content: body.content,
+            coverImage: body.coverImage || "",
         }
     });
 
@@ -107,7 +116,21 @@ blogRouter.get('/bulk', async (c) => {
         datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate());
 
-    const response = await prisma.post.findMany({});
+    const response = await prisma.post.findMany({
+        select: {
+            title: true,
+            content: true,
+            id: true,
+            coverImage: true,
+            author: {
+                select: {
+                    name: true,
+                    profile: true,
+                    image: true,
+                }
+            }
+        }
+    });
 
     return c.json({
         response
@@ -123,6 +146,17 @@ blogRouter.get('/:id', async (c) => {
     const response = await prisma.post.findFirst({
         where: {
             id: id,
+        }, select: {
+            title: true,
+            content: true,
+            coverImage: true,
+            author: {
+                select: {
+                    name: true,
+                    profile: true,
+                    image: true,
+                }
+            }
         }
     });
 
@@ -131,4 +165,22 @@ blogRouter.get('/:id', async (c) => {
         response
     });
 
+});
+
+blogRouter.delete('/:id', async (c) => {
+    const id = c.req.param('id');
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate());
+
+    const response = await prisma.post.delete({
+        where: {
+            id: id,
+        }
+    });
+
+    return c.json({
+        msg: "Blog deleted successfully",
+        response
+    });
 });
