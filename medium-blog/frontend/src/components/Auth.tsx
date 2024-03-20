@@ -26,10 +26,10 @@ export function Auth({ type }: { type : "signin" | "signup" }) {
   return (
     <div className="flex justify-center h-screen flex-col items-center">
         <div className="flex justify-center flex-col items-center w-8/12">
-            <div className="text-3xl font-extrabold">
+            <div className="text-3xl font-extrabold font-lora">
                 {type === "signin" ? "Sign in to your account" : "Create an account"}
             </div>
-            <div className="mt-2 text-slate-500">{type === "signin" ? "Don't have an account? " : "Already have an account? "}
+            <div className="mt-2 text-slate-500 font-inter">{type === "signin" ? "Don't have an account? " : "Already have an account? "}
             <Link to={type=="signin" ? "/signup" : "/signin"} className="underline text-slate-500">{type=="signin" ? "Sign up" : "Sign in"}</Link></div>
             {type === "signup" ? <div className="w-full mt-5"><Input label="Name" placeholder="Yash Barve..." onChange={(e) => {
                 setPostInputs(c => ({

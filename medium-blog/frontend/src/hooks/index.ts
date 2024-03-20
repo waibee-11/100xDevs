@@ -7,6 +7,7 @@ interface Blog {
     "content": string,
     "id": string,
     "coverImage": string,
+    "postDate": Date,
     "author": {
         "name": string,
         "image": string,

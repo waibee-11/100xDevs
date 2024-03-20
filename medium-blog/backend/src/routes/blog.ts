@@ -101,6 +101,7 @@ blogRouter.put('/', async (c) => {
             title: body.title,
             content: body.content,
             coverImage: body.coverImage || "",
+            postDate: new Date(),
         }
     });
 
@@ -122,6 +123,7 @@ blogRouter.get('/bulk', async (c) => {
             content: true,
             id: true,
             coverImage: true,
+            postDate: true,
             author: {
                 select: {
                     name: true,
@@ -129,6 +131,8 @@ blogRouter.get('/bulk', async (c) => {
                     image: true,
                 }
             }
+        }, orderBy: {
+            postDate: "desc",
         }
     });
 
@@ -150,6 +154,7 @@ blogRouter.get('/:id', async (c) => {
             title: true,
             content: true,
             coverImage: true,
+            postDate: true,
             author: {
                 select: {
                     name: true,

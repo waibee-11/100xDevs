@@ -10,16 +10,16 @@ export default function Appbar({ userName }: {userName: string}) {
   }
 
   return (
-    <div className="flex px-10 justify-between items-center mt-5">
-        <a href="/blogs" className="w-1/12"><img src="/public/medium-logo.png" alt="" /></a>
+    <div className="flex px-52 justify-between items-center mt-5">
+        <a href="/blogs" className="w-1/12 text-3xl font-bold hover:text-slate-800 font-lora text-black">Medium</a>
         <div className="appbar-right flex items-center gap-5">
             <Link to={'/profile'} >
-              <div className="font-regular text-lg">Hi, {userName ? userName.split(' ')[0] : "Anonymous"}!</div>
+              <div className="rounded-lg py-1 px-3 bg-black text-white hover:bg-slate-800 font-inter">Hi, {userName ? userName.split(' ')[0] : "Anonymous"}!</div>
             </Link>
             <Link to={'/publish'} >
-              <button className="bg-green-500 rounded-3xl py-1 px-3 hover:bg-green-400">Add new</button>
+              <button className="rounded-lg py-1 px-3 bg-black text-white hover:bg-slate-800 font-inter">New post</button>
             </Link>
-            <button className="bg-black border-2 rounded-3xl text-white px-4 py-1 text-md hover:bg-slate-700" onClick={handleLogOut}>Log out</button>
+            <button className="bg-black border-2 rounded-lg text-white px-4 py-1 text-md hover:bg-slate-800 font-inter" onClick={handleLogOut}>Log out</button>
         </div>
     </div>
   )
