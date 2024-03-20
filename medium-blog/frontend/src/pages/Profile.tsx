@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Profile() {
     const [hidePassword, setHidePassword] = useState(true);
-    const {userName, userEmail, userPassword, userId, userImage, userProfile} = useProfile();
+    const {userName, userEmail, userPassword, userImage, userProfile} = useProfile();
   return (
     <div className="">
         <Appbar userName={userName} />

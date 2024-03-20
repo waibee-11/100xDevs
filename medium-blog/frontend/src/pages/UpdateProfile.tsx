@@ -7,14 +7,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function UpdateProfile() {
     const navigate = useNavigate();
-    const [hidePassword, setHidePassword] = useState(true);
     const [username, setUsername] = useState("");
     const [useremail, setUseremail] = useState("");
     const [userpassword, setUserpassword] = useState("");
     const [coverimage, setCoverimage] = useState("");
     const [userprofile, setUserprofile] = useState("");
 
-    const {userName, userEmail, userPassword, userId, userImage, userProfile } = useProfile();
+    const {userName, userEmail, userPassword, userImage, userProfile } = useProfile();
 
     async function handleSubmit(){
         try{
@@ -29,7 +28,7 @@ export default function UpdateProfile() {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }
             });
-            console.log("SUCCESS!");
+            console.log(response);
             navigate('/blogs');
         } catch (e) {
             alert("Profile was not updated. Try again.");
@@ -56,10 +55,4 @@ export default function UpdateProfile() {
   )
 }
 
-function ProfileImageText({username}: {username: string}){
-    return (
-            <div className="text-center flex justify-center">
-                <div className="w-2/12 bg-slate-800 text-white text-6xl p-7 rounded-full">{username[0] || "A"}</div>
-            </div>
-    )
-}
+

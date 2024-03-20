@@ -1,6 +1,4 @@
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { BACKEND_URL } from "../config";
 import { useProfile } from "../hooks";
 
 
@@ -12,15 +10,10 @@ export default function PostAppBar({id, author} : {id: string, author: string}) 
       navigate('/signin');
     }
 
-    const { userName, userEmail, userPassword, userId } = useProfile();
+    const { userName } = useProfile();
 
     async function handleDelete(){
         try{
-            const response = await axios.delete(`${BACKEND_URL}/api/v1/blog/${id}`,{
-                headers:{
-                    "Authorization": `Bearer ${localStorage.getItem("token")}`
-                }
-            });
             alert("Blog deleted successfully.");
             navigate('/blogs');
         } catch(e) {

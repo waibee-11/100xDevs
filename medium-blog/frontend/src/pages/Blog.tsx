@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import Footer from "../components/Footer"
-import { useBlog, useProfile } from "../hooks"
+import { useBlog } from "../hooks"
 import PostAppBar from "../components/PostAppBar"
 import Loader from "../components/Loader"
 

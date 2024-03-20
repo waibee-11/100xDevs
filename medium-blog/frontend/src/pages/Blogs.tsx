@@ -6,7 +6,7 @@ import { useBlogs, useProfile } from "../hooks";
 
 export function Blogs() {
     const { loading, blogs } = useBlogs();
-    const { userName, userEmail, userPassword, userId, userImage, userProfile } = useProfile();
+    const { userName } = useProfile();
     if (loading){
         return (
             <div className="flex justify-center items-center h-screen">

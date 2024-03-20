@@ -1,4 +1,4 @@
-export function Avatar({name, date, image}: {name:string, date: string, image:any}){
+export function Avatar({name, image}: {name:string, date: string, image:any}){
     return (
         <div className="flex items-center gap-2">
             {image ? <img className="border-2 border-black w-7 h-7 rounded-full" src={image} alt="Rounded avatar"></img> : 

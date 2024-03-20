@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Appbar from "../components/Appbar"
 import Footer from "../components/Footer"
 import axios from "axios";
@@ -7,16 +7,6 @@ import { BACKEND_URL } from "../config";
 import { useBlog, useProfile } from "../hooks";
 import Loader from "../components/Loader";
 
-interface Blog {
-    "title": string,
-    "content": string,
-    "id": string,
-    "coverImage": string,
-    "author": {
-        "name": string,
-    }
-}
-
 export default function Edit() {
     const {id} = useParams();
     const navigate = useNavigate();
@@ -24,7 +14,7 @@ export default function Edit() {
     const [content, setContent] = useState("");
     const [coverImage, setCoverImage] = useState("");
 
-    const { userName, userEmail, userPassword, userId } = useProfile();
+    const { userName } = useProfile();
 
     const { loading, blog } : { loading: any, blog: any} = useBlog({
         id: id || ""
@@ -49,6 +39,7 @@ export default function Edit() {
                 }
             });
             alert("Blog was published successfully!");
+            console.log(response);
             navigate('/blogs');
         } catch (e) {
             alert("Blog was not published. Try again.");

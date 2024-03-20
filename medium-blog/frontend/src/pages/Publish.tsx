@@ -10,7 +10,7 @@ export default function Publish() {
     const navigate = useNavigate();
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const {userName, userEmail, userPassword, userId} = useProfile();
+    const {userName} = useProfile();
 
     async function handleSubmit(){
         try{
@@ -23,6 +23,7 @@ export default function Publish() {
                 }
             });
             alert("Blog was published successfully!");
+            console.log(response);
             navigate('/blogs');
         } catch (e) {
             alert("Blog was not published. Try again.");
