@@ -11,7 +11,9 @@ export default function Appbar({ userName }: {userName: string}) {
 
   return (
     <div className="flex px-52 justify-between items-center mt-5">
-        <a href="/blogs" className="w-1/12 text-3xl font-bold hover:text-slate-800 font-lora text-black">Medium</a>
+      <Link to={'/blogs'} >
+        <div className="w-1/12 text-3xl font-bold hover:text-slate-800 font-lora text-black">Medium</div>
+        </Link>
         <div className="appbar-right flex items-center gap-5">
             <Link to={'/profile'} >
               <div className="rounded-lg py-1 px-3 bg-black text-white hover:bg-slate-800 font-inter">Hi, {userName ? userName.split(' ')[0] : "Anonymous"}!</div>
