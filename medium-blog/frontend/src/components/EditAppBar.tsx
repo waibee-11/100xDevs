@@ -13,7 +13,7 @@ export default function EditAppBar() {
     const { userName } = useProfile();
   
     return (
-      <div className="flex px-52 justify-between items-center my-5">
+      <div className="flex px-5 xl:px-52 justify-between items-center my-5 sm:gap-0 gap-5 sm:flex-row flex-col">
             <Link to={'/blogs'} >
                 <div className="w-1/12 text-3xl text-black font-bold hover:text-slate-800 font-lora">Medium</div>
             </Link>

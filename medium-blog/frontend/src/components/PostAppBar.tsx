@@ -29,7 +29,7 @@ export default function PostAppBar({id, author} : {id: string, author: string}) 
     };
   
     return (
-      <div className="flex px-52 justify-between items-center my-5">
+      <div className="flex xl:px-52 px-10 flex-col md:flex-row gap-5 md:gap-0 justify-between items-center my-5">
         <Link to={'/blogs'} >
             <div className="w-1/12 text-3xl text-black font-bold hover:text-slate-800 font-lora">Medium</div>
           </Link>

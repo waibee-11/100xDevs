@@ -21,12 +21,12 @@ export function Blogs() {
     <div className="h-full">
         <Appbar userName={userName} />
         <div className="grid grid-cols-12 h-full">
-            <div className="col-span-2"></div>
-            <div className="col-span-8 flex flex-col py-10 h-full justify-start">
+            <div className="xl:col-span-1"></div>
+            <div className="xl:mx-0 mx-10 col-span-12 xl:col-span-10 flex flex-col py-10 h-full justify-start flex-wrap">
             {blogs.reverse().map((blog) => <BlogCard name={blog.author.name || "Anonymous"} title={blog.title} content={blog.content} id={blog.id} coverImage={blog.coverImage} profileImage={blog.author.image} postDate={blog.postDate} />
             )}
             </div>
-            <div className="col-span-2"></div>
+            <div className="xl:col-span-1"></div>
         </div>
         <Footer />
     </div>

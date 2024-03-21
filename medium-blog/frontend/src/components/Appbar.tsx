@@ -10,7 +10,7 @@ export default function Appbar({ userName }: {userName: string}) {
   }
 
   return (
-    <div className="flex px-52 justify-between items-center mt-5">
+    <div className="flex md:flex-row flex-col gap-5 md:gap-0 px-10 xl:px-52 justify-between items-center mt-5">
       <Link to={'/blogs'} >
         <div className="w-1/12 text-3xl font-bold hover:text-slate-800 font-lora text-black">Medium</div>
         </Link>

@@ -24,10 +24,11 @@ export function Auth({ type }: { type : "signin" | "signup" }) {
     }
 
   return (
-    <div className="flex justify-center h-screen flex-col items-center">
-        <div className="flex justify-center flex-col items-center w-8/12">
-            <div className="text-3xl font-extrabold font-lora">
-                {type === "signin" ? "Sign in to your account" : "Create an account"}
+    <div className="flex justify-center flex-col items-center mt-52">
+        <div className="flex justify-center flex-col items-center w-10/12">
+            <div className="visible xl:invisible text-5xl bg-black text-white px-3 py-2 font-extrabold font-lora mb-10">Medium</div>
+            <div className="text-3xl font-extrabold font-lora text-center">
+                {type === "signin" ? "Sign in to your Medium account" : "Create a Medium account"}
             </div>
             <div className="mt-2 text-slate-500 font-inter">{type === "signin" ? "Don't have an account? " : "Already have an account? "}
             <Link to={type=="signin" ? "/signup" : "/signin"} className="underline text-slate-500">{type=="signin" ? "Sign up" : "Sign in"}</Link></div>
