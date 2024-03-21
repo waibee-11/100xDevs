@@ -35,7 +35,7 @@ export default function PostAppBar({id, author} : {id: string, author: string}) 
           </Link>
           <div className="appbar-right flex items-center gap-5">
             <Link to={'/profile'} >
-                <div className="rounded-lg py-1 px-3 bg-black text-white hover:bg-slate-800 font-inter">Hi, {userName ? userName.split(' ')[0] : "Anonymous"}!</div>
+                <div className="text-center rounded-lg py-1 px-3 bg-black text-white hover:bg-slate-800 font-inter">Hi, {userName ? userName.split(' ')[0] : "Anonymous"}!</div>
             </Link>
               {userName === author ? <Link to={`/edit/${id}`} >
                 <button className="rounded-lg py-1 px-3 bg-black text-white hover:bg-green-600 font-inter">Edit post</button>

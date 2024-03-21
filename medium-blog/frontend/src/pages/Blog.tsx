@@ -32,11 +32,11 @@ export function Blog() {
   return (
     <div className="h-full">
         <PostAppBar id={id || ""} author={blog.author.name} />
-        <div className="xl:grid xl:grid-cols-12 my-12 mx-12 h-full flex flex-col gap-10">
+        <div className="xl:grid xl:grid-cols-12 my-12 mx-5 h-full flex flex-col gap-10">
             <div className="col-span-8 w-full flex flex-col gap-7">
                 <div className="text-4xl md:text-5xl xl:text-6xl font-semibold font-lora border-l border-t border-slate-300 pt-3 pl-3">{blog.title}</div>
                 {blog.coverImage === "" ? null : <div className="mt-4 "><img className="rounded-lg w-full object-fill" src={blog.coverImage || ""} alt="" /></div>}
-                <div className="text-xl lg:text-2xl whitespace-pre-wrap leading-tight font-lora border-l border-t border-slate-300 pt-3 pl-3">{blog.content}</div>
+                <div className="text-lg sm:text-xl lg:text-2xl whitespace-pre-wrap leading-tight font-lora border-l border-t border-slate-300 pt-3 pl-3">{blog.content}</div>
             </div>
             <div className="col-span-4 xl:ml-20 flex flex-col gap-5 w-fit">
                 <div className="xl:border-b xl:border-slate-500 w-full pb-5">

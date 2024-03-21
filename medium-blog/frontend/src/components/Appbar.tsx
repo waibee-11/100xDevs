@@ -16,7 +16,7 @@ export default function Appbar({ userName }: {userName: string}) {
         </Link>
         <div className="appbar-right flex items-center gap-5">
             <Link to={'/profile'} >
-              <div className="rounded-lg py-1 px-3 bg-black text-white hover:bg-slate-800 font-inter">Hi, {userName ? userName.split(' ')[0] : "Anonymous"}!</div>
+              <div className="rounded-lg py-1 px-3 bg-black text-white hover:bg-slate-800 font-inter text-center">Hi, {userName ? userName.split(' ')[0] : "Anonymous"}!</div>
             </Link>
             <Link to={'/publish'} >
               <button className="rounded-lg py-1 px-3 bg-black text-white hover:bg-slate-800 font-inter">New post</button>
